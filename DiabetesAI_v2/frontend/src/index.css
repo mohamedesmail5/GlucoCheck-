@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+
+  body {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    background-color: #070d1a;
+    color: #e2e8f0;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0d1629; }
+  ::-webkit-scrollbar-thumb { background: #243c6a; border-radius: 3px; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-azure text-white font-display font-semibold px-6 py-3 rounded-xl
+           hover:bg-azure-dark transition-all duration-200
+           active:scale-95 shadow-lg shadow-azure/20;
+  }
+  .btn-ghost {
+    @apply border border-white/10 text-slate-300 font-display px-6 py-3 rounded-xl
+           hover:bg-white/5 transition-all duration-200 active:scale-95;
+  }
+  .card {
+    @apply bg-navy-50 border border-white/5 rounded-2xl p-6
+           shadow-xl shadow-black/30;
+  }
+  .input-field {
+    @apply w-full bg-navy-100 border border-white/10 rounded-xl px-4 py-3
+           text-white placeholder-slate-500 font-body
+           focus:outline-none focus:border-azure/60 focus:ring-1 focus:ring-azure/30
+           transition-all duration-200;
+  }
+  .grade-badge-0 { @apply bg-jade/15 text-jade border border-jade/30 rounded-full px-3 py-1 text-sm font-mono; }
+  .grade-badge-1 { @apply bg-amber/15 text-amber border border-amber/30 rounded-full px-3 py-1 text-sm font-mono; }
+  .grade-badge-2 { @apply bg-orange-500/15 text-orange-400 border border-orange-500/30 rounded-full px-3 py-1 text-sm font-mono; }
+  .grade-badge-3 { @apply bg-rose/15 text-rose border border-rose/30 rounded-full px-3 py-1 text-sm font-mono; }
+}
+
+/* Streaming cursor */
+.streaming-cursor::after {
+  content: '▌';
+  animation: blink 0.7s step-end infinite;
+  color: #0ea5e9;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Message bubbles */
+.msg-user { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+.msg-agent { background: #111e38; border: 1px solid rgba(255,255,255,0.06); }
