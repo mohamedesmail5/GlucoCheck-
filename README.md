@@ -1,4 +1,4 @@
-# DiabetesAI — Smart Diabetes Diagnosis Agent
+# GlucoCheck — Smart Diabetes Diagnosis Agent
 
 **العام الدراسي:** 2024 / 2025
 
